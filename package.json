@@ -1,0 +1,99 @@
+{
+  "name": "react-javascript-boilerplate",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "A minimal and flexible boilerplate for building modern web applications with React and JavaScript",
+  "author": {
+    "name": "Bolorunduro Valiant-Joshua",
+    "email": "contact@example.com",
+    "url": "https://github.com/bolorundurovj"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bolorundurovj/React-Javascript-Boilerplate.git"
+  },
+  "keywords": [
+    "react",
+    "javascript",
+    "boilerplate",
+    "vite",
+    "tailwind",
+    "shadcn",
+    "testing",
+    "modern"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --ext js,jsx --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "deploy": "gh-pages -d dist",
+    "deploy:build": "yarn build && yarn deploy",
+    "prepare": "husky",
+    "changelog": "conventional-changelog -p conventionalcommits -i CHANGELOG.md -s",
+    "changelog:first": "conventional-changelog -p conventionalcommits -i CHANGELOG.md -s -r 0",
+    "version": "yarn changelog && git add CHANGELOG.md",
+    "release": "yarn version && git push && git push --tags",
+    "release:patch": "node scripts/release.js patch",
+    "release:minor": "node scripts/release.js minor",
+    "release:major": "node scripts/release.js major"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,css,html}": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.263.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.1",
+    "tailwind-merge": "^3.3.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.3",
+    "@vitest/ui": "^3.2.4",
+    "autoprefixer": "^10.4.14",
+    "conventional-changelog-cli": "^5.0.0",
+    "conventional-changelog-conventionalcommits": "^9.0.0",
+    "eslint": "^8.45.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "gh-pages": "^6.3.0",
+    "husky": "^9.1.7",
+    "jsdom": "^22.1.0",
+    "lint-staged": "^16.1.2",
+    "postcss": "^8.4.27",
+    "prettier": "^3.0.0",
+    "tailwindcss": "^3.3.3",
+    "tailwindcss-animate": "^1.0.7",
+    "vite": "^4.4.5",
+    "vitest": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "yarn": ">=1.22.0"
+  },
+  "packageManager": "yarn@1.22.19"
+}

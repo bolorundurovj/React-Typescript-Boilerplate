@@ -1,0 +1,90 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'yarn'
+
+    - name: Install dependencies
+      run: yarn install --frozen-lockfile
+
+    - name: Run tests
+      run: yarn test:run
+
+    - name: Build
+      run: yarn build
+
+    - name: Generate changelog
+      run: yarn changelog
+
+    - name: Create Release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        body: |
+          ## What's Changed
+          
+          ${{ steps.changelog.outputs.clean_changelog }}
+          
+          ## Installation
+          
+          ```bash
+          git clone https://github.com/bolorundurovj/React-Javascript-Boilerplate.git
+          cd React-Javascript-Boilerplate
+          yarn install
+          yarn dev
+          ```
+          
+          ## Documentation
+          
+          - [README](https://github.com/bolorundurovj/React-Javascript-Boilerplate#readme)
+          - [Contributing Guide](https://github.com/bolorundurovj/React-Javascript-Boilerplate/blob/main/CONTRIBUTING.md)
+          
+          ## Support
+          
+          If you have any questions or need help, please [open an issue](https://github.com/bolorundurovj/React-Javascript-Boilerplate/issues).
+        draft: false
+        prerelease: false
+
+    - name: Upload Release Assets
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./dist
+        asset_name: react-javascript-boilerplate-${{ github.ref_name }}.zip
+        asset_content_type: application/zip
+
+    - name: Update CHANGELOG.md
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add CHANGELOG.md
+        git commit -m "docs: update changelog for ${{ github.ref_name }}" || exit 0
+        git push 
