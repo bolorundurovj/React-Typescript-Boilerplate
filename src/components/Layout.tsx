@@ -1,21 +1,31 @@
-import { Link, useLocation } from 'react-router-dom'
-import { useTheme } from '../contexts/ThemeContext'
-import { Button } from './ui/Button'
-import { Moon, Sun, Menu, X } from 'lucide-react'
-import { useState } from 'react'
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { useTheme } from '../contexts/ThemeContext';
+import { Button } from './ui/Button';
+import { Moon, Sun, Menu, X } from 'lucide-react';
+import { useState, ReactNode } from 'react';
 
-const Layout = ({ children }) => {
-  const { theme, toggleTheme } = useTheme()
-  const location = useLocation()
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+interface LayoutProps {
+  children: ReactNode;
+}
 
-  const navigation = [
+interface NavigationItem {
+  name: string;
+  href: string;
+}
+
+const Layout: React.FC<LayoutProps> = ({ children }) => {
+  const { theme, toggleTheme } = useTheme();
+  const location = useLocation();
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+
+  const navigation: NavigationItem[] = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },
-  ]
+  ];
 
-  const isActive = (path) => location.pathname === path
+  const isActive = (path: string): boolean => location.pathname === path;
 
   return (
     <div className="min-h-screen bg-background">
@@ -24,7 +34,7 @@ const Layout = ({ children }) => {
         <div className="container flex h-14 items-center">
           <div className="mr-4 flex">
             <Link to="/" className="mr-6 flex items-center space-x-2">
-              <span className="font-bold">React Boilerplate</span>
+              <span className="font-bold">React TypeScript Boilerplate</span>
             </Link>
           </div>
 
@@ -35,9 +45,7 @@ const Layout = ({ children }) => {
                 key={item.name}
                 to={item.href}
                 className={`transition-colors hover:text-foreground/80 ${
-                  isActive(item.href)
-                    ? 'text-foreground'
-                    : 'text-foreground/60'
+                  isActive(item.href) ? 'text-foreground' : 'text-foreground/60'
                 }`}
               >
                 {item.name}
@@ -107,12 +115,12 @@ const Layout = ({ children }) => {
       <footer className="border-t bg-background">
         <div className="container flex h-14 items-center justify-between">
           <p className="text-sm text-muted-foreground">
-            © 2024 React JavaScript Boilerplate. Built with React, Tailwind CSS,
-            and shadcn/ui.
+            © 2024 React TypeScript Boilerplate. Built with React, TypeScript,
+            Tailwind CSS, and shadcn/ui.
           </p>
           <div className="flex items-center space-x-4 text-sm text-muted-foreground">
             <a
-              href="https://github.com/bolorundurovj/React-Javascript-Boilerplate"
+              href="https://github.com/bolorundurovj/React-Typescript-Boilerplate"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-foreground transition-colors"
@@ -131,7 +139,7 @@ const Layout = ({ children }) => {
         </div>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Layout 
+export default Layout;

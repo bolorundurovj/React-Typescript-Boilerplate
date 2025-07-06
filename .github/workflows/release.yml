@@ -54,20 +54,20 @@ jobs:
           ## Installation
           
           ```bash
-          git clone https://github.com/bolorundurovj/React-Javascript-Boilerplate.git
-          cd React-Javascript-Boilerplate
+          git clone https://github.com/bolorundurovj/React-Typescript-Boilerplate.git
+          cd React-Typescript-Boilerplate
           yarn install
           yarn dev
           ```
           
           ## Documentation
           
-          - [README](https://github.com/bolorundurovj/React-Javascript-Boilerplate#readme)
-          - [Contributing Guide](https://github.com/bolorundurovj/React-Javascript-Boilerplate/blob/main/CONTRIBUTING.md)
+          - [README](https://github.com/bolorundurovj/React-Typescript-Boilerplate#readme)
+          - [Contributing Guide](https://github.com/bolorundurovj/React-Typescript-Boilerplate/blob/main/CONTRIBUTING.md)
           
           ## Support
           
-          If you have any questions or need help, please [open an issue](https://github.com/bolorundurovj/React-Javascript-Boilerplate/issues).
+          If you have any questions or need help, please [open an issue](https://github.com/bolorundurovj/React-Typescript-Boilerplate/issues).
         draft: false
         prerelease: false
 
@@ -78,7 +78,7 @@ jobs:
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: ./dist
-        asset_name: react-javascript-boilerplate-${{ github.ref_name }}.zip
+        asset_name: react-typescript-boilerplate-${{ github.ref_name }}.zip
         asset_content_type: application/zip
 
     - name: Update CHANGELOG.md

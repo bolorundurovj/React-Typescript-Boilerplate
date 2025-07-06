@@ -1,10 +1,11 @@
-# React JavaScript Boilerplate
+# React TypeScript Boilerplate
 
-A minimal and flexible boilerplate for building modern web applications with React and JavaScript. Get started quickly with best practices and essential tooling pre-configured.
+A minimal and flexible boilerplate for building modern web applications with React and TypeScript. Get started quickly with best practices and essential tooling pre-configured.
 
 ## ✨ Features
 
 - **⚡ Fast Development** - Built with Vite for lightning-fast development and hot module replacement
+- **🔒 Type Safe** - Full TypeScript support with strict type checking and IntelliSense
 - **🎨 Modern UI** - Tailwind CSS with shadcn/ui components for beautiful, accessible interfaces
 - **🌙 Dark Mode** - Built-in dark/light theme toggle with persistent storage
 - **📱 Responsive** - Mobile-first responsive design with modern CSS
@@ -18,13 +19,13 @@ A minimal and flexible boilerplate for building modern web applications with Rea
 ## 🛠️ Tech Stack
 
 - **Framework**: React 18
-- **Language**: JavaScript (ES6+)
+- **Language**: TypeScript
 - **Build Tool**: Vite
 - **Styling**: Tailwind CSS
 - **Components**: shadcn/ui
 - **Routing**: React Router v6
 - **Testing**: Vitest + Testing Library
-- **Linting**: ESLint + Prettier
+- **Linting**: ESLint + Prettier + TypeScript ESLint
 - **Package Manager**: Yarn
 - **Git Hooks**: Husky + lint-staged
 
@@ -40,8 +41,8 @@ A minimal and flexible boilerplate for building modern web applications with Rea
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/bolorundurovj/React-Javascript-Boilerplate.git
-   cd React-Javascript-Boilerplate
+   git clone https://github.com/bolorundurovj/React-Typescript-Boilerplate.git
+   cd React-Typescript-Boilerplate
    ```
 
 2. **Install dependencies**
@@ -65,27 +66,27 @@ A minimal and flexible boilerplate for building modern web applications with Rea
 src/
 ├── components/          # Reusable UI components
 │   ├── ui/             # shadcn/ui components
-│   │   ├── Button.jsx
-│   │   ├── Card.jsx
-│   │   ├── Input.jsx
-│   │   └── Label.jsx
-│   ├── Layout.jsx      # Main layout component
+│   │   ├── Button.tsx
+│   │   ├── Card.tsx
+│   │   ├── Input.tsx
+│   │   └── Label.tsx
+│   ├── Layout.tsx      # Main layout component
 │   └── __tests__/      # Component tests
 ├── contexts/           # React contexts
-│   ├── ThemeContext.jsx
+│   ├── ThemeContext.tsx
 │   └── __tests__/      # Context tests
 ├── lib/                # Utility functions
-│   └── utils.js
+│   └── utils.ts
 ├── pages/              # Page components
-│   ├── Home.jsx
-│   ├── About.jsx
-│   ├── Contact.jsx
-│   ├── NotFound.jsx
+│   ├── Home.tsx
+│   ├── About.tsx
+│   ├── Contact.tsx
+│   ├── NotFound.tsx
 │   └── __tests__/      # Page tests
 ├── test/               # Test configuration
-│   └── setup.js
-├── App.jsx             # Main app component
-├── main.jsx            # App entry point
+│   └── setup.ts
+├── App.tsx             # Main app component
+├── main.tsx            # App entry point
 └── index.css           # Global styles
 ```
 
@@ -163,6 +164,7 @@ yarn lint         # Run ESLint
 yarn lint:fix     # Fix ESLint errors
 yarn format       # Format code with Prettier
 yarn format:check # Check code formatting
+yarn type-check   # Run TypeScript type checking
 
 # Changelog & Releases
 yarn changelog    # Generate changelog for unreleased commits
@@ -174,9 +176,9 @@ yarn release:major # Create major release (1.0.0)
 
 ### Code Quality
 
-- **ESLint**: JavaScript linting with React-specific rules
+- **ESLint**: TypeScript and React linting with strict rules
 - **Prettier**: Code formatting for consistent style
-- **TypeScript**: Type checking (optional, can be enabled)
+- **TypeScript**: Strict type checking with modern features
 
 ### Git Hooks
 
@@ -184,7 +186,7 @@ This boilerplate includes pre-configured Git hooks to ensure code quality:
 
 #### Pre-commit Hook
 
-- Runs ESLint on staged JavaScript/JSX files
+- Runs ESLint on staged TypeScript/TSX files
 - Formats code with Prettier
 - Automatically fixes auto-fixable issues
 
@@ -327,7 +329,7 @@ This boilerplate is configured for automatic deployment to GitHub Pages using Gi
 
 3. **Your site will be available at**
    ```
-   https://YOUR_USERNAME.github.io/React-Javascript-Boilerplate/
+   https://YOUR_USERNAME.github.io/React-Typescript-Boilerplate/
    ```
 
 #### Manual Deployment
@@ -406,8 +408,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 If you have any questions or need help:
 
 - 📧 Email: [contact@example.com](mailto:contact@example.com)
-- 🐛 Issues: [GitHub Issues](https://github.com/bolorundurovj/React-Javascript-Boilerplate/issues)
-- 💬 Discussions: [GitHub Discussions](https://github.com/bolorundurovj/React-Javascript-Boilerplate/discussions)
+- 🐛 Issues: [GitHub Issues](https://github.com/bolorundurovj/React-Typescript-Boilerplate/issues)
+- 💬 Discussions: [GitHub Discussions](https://github.com/bolorundurovj/React-Typescript-Boilerplate/discussions)
 
 ---
 

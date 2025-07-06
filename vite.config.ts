@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
@@ -13,10 +15,10 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    setupFiles: ['./src/test/setup.js'],
+    setupFiles: ['./src/test/setup.ts'],
   },
   base:
     process.env.NODE_ENV === 'production'
-      ? '/React-Javascript-Boilerplate/'
+      ? '/React-Typescript-Boilerplate/'
       : '/',
 });

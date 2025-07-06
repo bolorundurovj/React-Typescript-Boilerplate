@@ -93,18 +93,18 @@ function bumpVersion(type) {
   log(`🎉 Release ${newVersion} completed successfully!`, 'green');
   log(`📋 Next steps:`, 'cyan');
   log(
-    `   1. Check the GitHub release: https://github.com/bolorundurovj/React-Javascript-Boilerplate/releases`,
+    `   1. Check the GitHub release: https://github.com/bolorundurovj/React-Typescript-Boilerplate/releases`,
     'blue'
   );
   log(
-    `   2. Verify the deployment: https://bolorundurovj.github.io/React-Javascript-Boilerplate/`,
+    `   2. Verify the deployment: https://bolorundurovj.github.io/React-Typescript-Boilerplate/`,
     'blue'
   );
   log(`   3. Share the release with your community!`, 'blue');
 }
 
 function showHelp() {
-  log('📖 React JavaScript Boilerplate - Release Script', 'bright');
+  log('📖 React TypeScript Boilerplate - Release Script', 'bright');
   log('');
   log('Usage:', 'cyan');
   log('  node scripts/release.js <type>', 'blue');

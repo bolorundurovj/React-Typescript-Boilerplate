@@ -1,30 +1,48 @@
-import { Button } from '../components/ui/Button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/Card'
-import { ArrowRight, Zap, Shield, Code, Palette } from 'lucide-react'
+import React from 'react';
+import { Button } from '../components/ui/Button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '../components/ui/Card';
+import { ArrowRight, Zap, Shield, Code, Palette } from 'lucide-react';
+import { ReactElement } from 'react';
 
-const Home = () => {
-  const features = [
+interface Feature {
+  icon: ReactElement;
+  title: string;
+  description: string;
+}
+
+const Home: React.FC = () => {
+  const features: Feature[] = [
     {
       icon: <Zap className="h-6 w-6" />,
       title: 'Fast Development',
-      description: 'Built with Vite for lightning-fast development and hot module replacement.',
+      description:
+        'Built with Vite for lightning-fast development and hot module replacement.',
     },
     {
       icon: <Shield className="h-6 w-6" />,
       title: 'Type Safe',
-      description: 'Full TypeScript support with strict type checking and IntelliSense.',
+      description:
+        'Full TypeScript support with strict type checking and IntelliSense.',
     },
     {
       icon: <Code className="h-6 w-6" />,
       title: 'Modern Stack',
-      description: 'React 18, Tailwind CSS, and shadcn/ui components for modern web development.',
+      description:
+        'React 18, TypeScript, Tailwind CSS, and shadcn/ui components for modern web development.',
     },
     {
       icon: <Palette className="h-6 w-6" />,
       title: 'Beautiful UI',
-      description: 'Pre-built components with dark mode support and responsive design.',
+      description:
+        'Pre-built components with dark mode support and responsive design.',
     },
-  ]
+  ];
 
   return (
     <div className="flex-1">
@@ -32,12 +50,12 @@ const Home = () => {
       <section className="container px-4 py-24 mx-auto text-center">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
-            React JavaScript Boilerplate
+            React TypeScript Boilerplate
           </h1>
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
-            A minimal and flexible boilerplate for building modern web applications
-            with React and JavaScript. Get started quickly with best practices and
-            essential tooling pre-configured.
+            A minimal and flexible boilerplate for building modern web
+            applications with React and TypeScript. Get started quickly with
+            best practices and essential tooling pre-configured.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Button size="lg">
@@ -58,8 +76,9 @@ const Home = () => {
             Everything you need to build modern web apps
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            This boilerplate comes with all the essential tools and configurations
-            you need to start building production-ready applications.
+            This boilerplate comes with all the essential tools and
+            configurations you need to start building production-ready
+            applications.
           </p>
         </div>
 
@@ -87,15 +106,13 @@ const Home = () => {
             Ready to get started?
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Clone this repository and start building your next great application.
+            Clone this repository and start building your next great
+            application.
           </p>
           <div className="mt-8">
-            <Button 
-              size="lg" 
-              asChild
-            >
-              <a 
-                href="https://github.com/bolorundurovj/React-Javascript-Boilerplate"
+            <Button size="lg" asChild>
+              <a
+                href="https://github.com/bolorundurovj/React-Typescript-Boilerplate"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -107,7 +124,7 @@ const Home = () => {
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Home 
+export default Home;

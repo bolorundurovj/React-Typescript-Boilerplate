@@ -1,3 +1,4 @@
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './contexts/ThemeContext';
 import Layout from './components/Layout';
@@ -6,11 +7,11 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 
-function App() {
+const App: React.FC = () => {
   // Set basename for GitHub Pages deployment
   const basename =
-    process.env.NODE_ENV === 'production'
-      ? '/React-Javascript-Boilerplate'
+    process.env['NODE_ENV'] === 'production'
+      ? '/React-Typescript-Boilerplate'
       : '';
 
   return (
@@ -27,6 +28,6 @@ function App() {
       </Router>
     </ThemeProvider>
   );
-}
+};
 
 export default App;

@@ -1,10 +1,24 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/Card'
-import { CheckCircle, Package, Settings, Users } from 'lucide-react'
+import React from 'react';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '../components/ui/Card';
+import { CheckCircle, Package, Settings, Users } from 'lucide-react';
+import { ReactElement } from 'react';
 
-const About = () => {
-  const techStack = [
+interface Feature {
+  icon: ReactElement;
+  title: string;
+  description: string;
+}
+
+const About: React.FC = () => {
+  const techStack: string[] = [
     'React 18',
-    'JavaScript (ES6+)',
+    'TypeScript',
     'Vite',
     'Tailwind CSS',
     'shadcn/ui',
@@ -13,25 +27,28 @@ const About = () => {
     'Testing Library',
     'ESLint',
     'Prettier',
-  ]
+  ];
 
-  const features = [
+  const features: Feature[] = [
     {
       icon: <Package className="h-6 w-6" />,
       title: 'Modern Tooling',
-      description: 'Built with the latest tools and libraries for optimal development experience.',
+      description:
+        'Built with the latest tools and libraries for optimal development experience.',
     },
     {
       icon: <Settings className="h-6 w-6" />,
       title: 'Pre-configured',
-      description: 'Everything is set up and ready to go. No complex configuration needed.',
+      description:
+        'Everything is set up and ready to go. No complex configuration needed.',
     },
     {
       icon: <Users className="h-6 w-6" />,
       title: 'Best Practices',
-      description: 'Follows React and JavaScript best practices for maintainable code.',
+      description:
+        'Follows React and TypeScript best practices for maintainable code.',
     },
-  ]
+  ];
 
   return (
     <div className="container px-4 py-12 mx-auto">
@@ -42,9 +59,10 @@ const About = () => {
             About This Boilerplate
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            This React JavaScript boilerplate is designed to help you start building
-            modern web applications quickly and efficiently. It includes all the
-            essential tools and configurations you need to get up and running.
+            This React TypeScript boilerplate is designed to help you start
+            building modern web applications quickly and efficiently. It
+            includes all the essential tools and configurations you need to get
+            up and running.
           </p>
         </div>
 
@@ -101,7 +119,8 @@ const About = () => {
               <div className="p-4 rounded-lg bg-muted">
                 <h4 className="font-semibold mb-2">1. Clone the repository</h4>
                 <code className="text-sm bg-background px-2 py-1 rounded">
-                  git clone https://github.com/bolorundurovj/React-Javascript-Boilerplate.git
+                  git clone
+                  https://github.com/bolorundurovj/React-Typescript-Boilerplate.git
                 </code>
               </div>
               <div className="p-4 rounded-lg bg-muted">
@@ -111,7 +130,9 @@ const About = () => {
                 </code>
               </div>
               <div className="p-4 rounded-lg bg-muted">
-                <h4 className="font-semibold mb-2">3. Start the development server</h4>
+                <h4 className="font-semibold mb-2">
+                  3. Start the development server
+                </h4>
                 <code className="text-sm bg-background px-2 py-1 rounded">
                   yarn dev
                 </code>
@@ -119,7 +140,10 @@ const About = () => {
               <div className="p-4 rounded-lg bg-muted">
                 <h4 className="font-semibold mb-2">4. Open your browser</h4>
                 <p className="text-sm text-muted-foreground">
-                  Navigate to <code className="bg-background px-1 rounded">http://localhost:5173</code>
+                  Navigate to{' '}
+                  <code className="bg-background px-1 rounded">
+                    http://localhost:5173
+                  </code>
                 </p>
               </div>
             </div>
@@ -127,7 +151,7 @@ const About = () => {
         </Card>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default About 
+export default About;

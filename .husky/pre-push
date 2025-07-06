@@ -1,3 +1,11 @@
+echo "🔎 Running TypeScript type check before push..."
+yarn type-check
+
+if [ $? -ne 0 ]; then
+    echo "❌ TypeScript type check failed. Please fix type errors before pushing."
+    exit 1
+fi
+
 echo "🧪 Running tests before push..."
 npm run test:run
 
@@ -6,4 +14,4 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-echo "✅ All tests passed!" 
+echo "✅ All tests and type checks passed!" 
