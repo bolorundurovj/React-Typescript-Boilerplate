@@ -356,7 +356,7 @@ We use the following labels to categorize issues:
 
 If you need help or have questions:
 
-- 📧 **Email**: [contact@example.com](mailto:contact@example.com)
+- 📧 **Email**: [ulha2x7m4@mozmail.com](mailto:ulha2x7m4@mozmail.com)
 - 🐛 **Issues**: [GitHub Issues](https://github.com/bolorundurovj/React-Javascript-Boilerplate/issues)
 - 💬 **Discussions**: [GitHub Discussions](https://github.com/bolorundurovj/React-Javascript-Boilerplate/discussions)
 
