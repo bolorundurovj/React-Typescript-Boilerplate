@@ -7,10 +7,13 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 
+// Add Vite env type declaration for TypeScript
+/// <reference types="vite/client" />
+
 const App: React.FC = () => {
   // Set basename for GitHub Pages deployment
   const basename =
-    process.env['NODE_ENV'] === 'production'
+    import.meta.env.MODE === 'production'
       ? '/React-Typescript-Boilerplate'
       : '';
 
